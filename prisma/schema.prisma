@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Application {
+  id               String   @id @default(cuid())
+  company          String
+  jobTitle         String
+  jobOffer         String
+  originalCv       String
+  originalLetter   String
+  generatedCv      String
+  generatedLetter  String
+  generatedEmail   String
+  createdAt        DateTime @default(now())
+}
